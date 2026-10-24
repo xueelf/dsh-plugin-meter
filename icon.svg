@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <linearGradient id="meter-blue" x1="8.5" y1="7.5" x2="27.75" y2="29" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67C7FE"/>
+      <stop offset="1" stop-color="#4D6BFE"/>
+    </linearGradient>
+    <linearGradient id="meter-shine" x1="9.3" y1="8.1" x2="18" y2="20.8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="meter-shape">
+      <rect x="8.2441" y="7" width="19.5119" height="22" rx="3.8"/>
+    </clipPath>
+  </defs>
+  <rect x="8.2441" y="7" width="19.5119" height="22" rx="3.8" fill="url(#meter-blue)"/>
+  <rect width="36" height="36" fill="url(#meter-shine)" clip-path="url(#meter-shape)"/>
+  <g fill="#FFFFFF">
+    <rect x="13.4973" y="12.7464" width="9.0055" height="1.5009" rx="0.7505"/>
+    <rect x="13.4973" y="17.2494" width="9.0055" height="1.5009" rx="0.7505"/>
+    <rect x="13.4973" y="21.7524" width="9.0055" height="1.5009" rx="0.7505"/>
+  </g>
+</svg>

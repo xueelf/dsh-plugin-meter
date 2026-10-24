@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Cost Meter",
+    "description": "Shows the session's estimated API cost and the current provider's balance or quota below the composer."
+  }
+}
