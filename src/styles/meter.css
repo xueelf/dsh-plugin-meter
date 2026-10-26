@@ -1,0 +1,127 @@
+/**
+ * 费用统计条与详情面板。
+ *
+ * 数值、间距和颜色逐项对齐宿主 ui-chat 的统计弹窗：
+ * - 触发器：StatsPills.module.css
+ * - 面板：stat-dialog.module.css
+ * 颜色只用宿主主题 token，不写死。
+ */
+
+.dsh-meter-anchor {
+  min-width: 0;
+  font-size: calc(var(--dsh-content-font-size-secondary, 13px) - 1px);
+  line-height: calc(20px + var(--dsh-content-font-delta-secondary, 0px));
+  display: inline-flex;
+}
+
+.dsh-meter-pill {
+  box-sizing: border-box;
+  border-radius: var(--dsw-radius-sm);
+  max-width: 100%;
+  color: var(--dsw-alias-label-tertiary);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  line-height: inherit;
+  white-space: nowrap;
+  background: 0 0;
+  border: none;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 8px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.dsh-meter-pill svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+}
+
+.dsh-meter-pill:hover,
+.dsh-meter-pill[aria-expanded='true'] {
+  background: var(--dsw-alias-interactive-bg-hover);
+  color: var(--dsw-alias-label-secondary);
+}
+
+.dsh-meter-label {
+  text-overflow: ellipsis;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.dsh-meter-sep {
+  color: var(--dsw-alias-separator-primary);
+  margin: 0 6px;
+}
+
+.dsh-meter-panel {
+  z-index: 1100;
+  box-sizing: border-box;
+  border-radius: var(--dsw-radius-lg);
+  background: var(--dsw-specific-menu);
+  width: max-content;
+  min-width: min(300px, 100vw - 24px);
+  max-width: min(440px, 100vw - 24px);
+  backdrop-filter: var(--dsw-menu-backdrop-filter);
+  --dsw-elevation-stroke-color: var(--dsw-alias-border-l1);
+  box-shadow: var(--dsw-elevation-prominent);
+  color: var(--dsw-alias-label-secondary);
+  cursor: default;
+  border: 0;
+  padding: 16px;
+  font-size: 12px;
+  line-height: 18px;
+  position: fixed;
+}
+
+.dsh-meter-title {
+  color: var(--dsw-alias-label-primary);
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  display: flex;
+}
+
+.dsh-meter-title-label {
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  display: inline-flex;
+}
+
+.dsh-meter-title-label svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+}
+
+.dsh-meter-title-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.dsh-meter-rule {
+  border-top: 0.5px solid var(--dsw-alias-border-l2);
+  margin-bottom: 10px;
+}
+
+.dsh-meter-details {
+  color: var(--dsw-alias-label-tertiary);
+  grid-template-columns: minmax(76px, auto) minmax(0, 1fr);
+  gap: 6px 16px;
+  margin: 0;
+  display: grid;
+}
+
+.dsh-meter-details dt,
+.dsh-meter-details dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.dsh-meter-details dd {
+  color: var(--dsw-alias-label-secondary);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
