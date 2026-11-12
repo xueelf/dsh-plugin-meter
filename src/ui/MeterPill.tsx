@@ -1,12 +1,9 @@
+import { useDismissOnOutsidePointer } from '@deepseek-ai/dsh-client-ui-primitives';
 import {
-  useAnchoredPosition,
-  useDismissOnOutsidePointer,
-} from '@deepseek-ai/dsh-client-ui-primitives';
-import {
-  type CSSProperties,
   type ReactElement,
   Fragment,
   useEffect,
+  useId,
   useRef,
   useState,
 } from 'react';
@@ -38,16 +35,6 @@ interface MeterReadingProps {
   readonly directory: ModelDirectoryStore;
   readonly t: Translate;
 }
-
-/** 视口边缘留白，来自官方 `useStatDialog` 的 `PANEL_MARGIN`。 */
-const PANEL_MARGIN = 12;
-/** 触发器与面板的距离，来自官方 `useStatDialog` 的 `PANEL_GAP`。 */
-const PANEL_GAP = 8;
-const HIDDEN_STYLE: CSSProperties = {
-  left: 0,
-  top: 0,
-  visibility: 'hidden',
-};
 
 /** 16×16 账单图标，1px 线宽，原创。 */
 function MeterIcon(): ReactElement {
@@ -84,15 +71,7 @@ function MeterReading({
     readonly provider: string | null;
     readonly reset: number;
   } | null>(null);
-  const position = useAnchoredPosition({
-    open,
-    anchorRef: rootRef,
-    panelRef,
-    side: 'top',
-    align: 'end',
-    gap: PANEL_GAP,
-    margin: PANEL_MARGIN,
-  });
+  const anchorName = `--dsh-meter-${useId().replaceAll(':', '')}`;
 
   useDismissOnOutsidePointer(rootRef, open, setOpen, panelRef);
 
@@ -172,7 +151,7 @@ function MeterReading({
           className="dsh-meter-panel"
           role="dialog"
           aria-label={t('title')}
-          style={position ?? HIDDEN_STYLE}
+          style={{ positionAnchor: anchorName }}
         >
           <div className="dsh-meter-title">
             <span className="dsh-meter-title-label">
@@ -197,7 +176,7 @@ function MeterReading({
 
   return (
     <>
-      <span ref={rootRef} className="dsh-meter-anchor">
+      <span ref={rootRef} className="dsh-meter-anchor" style={{ anchorName }}>
         <button
           ref={triggerRef}
           type="button"
