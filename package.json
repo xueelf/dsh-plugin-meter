@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-meter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Provider-aware cost and quota meter for DeepSeek Harness (dsh). Shows the session's estimated API cost below the composer and the selected provider's balance or quota.",
   "keywords": [
     "balance",
