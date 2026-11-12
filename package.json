@@ -70,7 +70,7 @@
     "husky": "^9.1.7",
     "prettier": "^3.9.8",
     "prettier-plugin-sort": "^1.1.2",
-    "typescript-eslint": "^8.70.1"
+    "typescript-eslint": "^8.72.1"
   },
   "peerDependencies": {
     "@deepseek-ai/dsh-client-ui-primitives": "^0.2.2-rc.2",
