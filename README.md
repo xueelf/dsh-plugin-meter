@@ -31,7 +31,7 @@ You can install it from the dsh plugin manager by entering `dsh-plugin-meter`. O
 
 DSH manages dependencies through pnpm, and pnpm's [`minimumReleaseAge`](https://pnpm.io/supply-chain-security) policy skips versions that have not been published for the configured age (at most 24 hours), so installing a plugin may download an older version.
 
-To use the latest plugin version immediately, specify the version when installing, for example `dsh-plugin-meter@^0.1.0`. Alternatively, wait for a while until the new version meets the policy, then install by package name.
+To use the latest plugin version immediately, specify the version when installing, for example `dsh-plugin-meter@^0.2.0`. Alternatively, wait for a while until the new version meets the policy, then install by package name.
 
 ## How the estimate works
 
